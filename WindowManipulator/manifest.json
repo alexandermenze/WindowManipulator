@@ -2,7 +2,7 @@
   "Actions": [
     {
       "Icon": "Images/icon",
-      "Name": "TODO_ENTER_NAME_OF_ACTION",
+      "Name": "Window Topmost",
       "States": [
         {
           "Image": "Images/pluginAction",
@@ -10,20 +10,20 @@
           "FontSize": "12"
         }
       ],
-      "SupportedInMultiActions": false,
-      "Tooltip": "TODO_ENTER_TOOLTIP",
-      "UUID": "WindowManipulator.pluginaction",
+      "SupportedInMultiActions": true,
+      "Tooltip": "Bring a window to the front",
+      "UUID": "WindowManipulator.windowTopmost",
       "PropertyInspectorPath": "PropertyInspector/PluginActionPI.html"
     }
   ],
-  "Author": "TODO_ENTER_YOUR_NAME",
+  "Author": "Alexander Menze",
   "Name": "WindowManipulator",
-  "Description": "TODO_ENTER_PLUGIN_DESCRIPTION",
+  "Description": "Manipulation of window position and state",
   "Icon": "Images/pluginIcon",
-  "URL": "TODO_ENTER_YOUR_HOMEPAGE",
+  "URL": "https://github.com/alexandermenze",
   "Version": "1.0",
   "CodePath": "WindowManipulator",
-  "Category": "Custom",
+  "Category": "WindowManipulator",
   "CategoryIcon": "Images/categoryIcon",
   "OS": [
     {

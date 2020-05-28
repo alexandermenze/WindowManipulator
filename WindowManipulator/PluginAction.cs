@@ -1,25 +1,22 @@
 ﻿using BarRaider.SdTools;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WindowManipulator
 {
-    [PluginActionId("WindowManipulator.pluginaction")]
+    [PluginActionId("WindowManipulator.windowTopmost")]
     public class PluginAction : PluginBase
     {
         private class PluginSettings
         {
             public static PluginSettings CreateDefaultSettings()
             {
-                PluginSettings instance = new PluginSettings();
-                instance.OutputFileName = String.Empty;
-                instance.InputString = String.Empty;
+                PluginSettings instance = new PluginSettings
+                {
+                    OutputFileName = string.Empty,
+                    InputString = string.Empty
+                };
                 return instance;
             }
 
@@ -31,11 +28,8 @@ namespace WindowManipulator
             public string InputString { get; set; }
         }
 
-        #region Private Members
-
         private PluginSettings settings;
 
-        #endregion
         public PluginAction(SDConnection connection, InitialPayload payload) : base(connection, payload)
         {
             if (payload.Settings == null || payload.Settings.Count == 0)
@@ -70,13 +64,9 @@ namespace WindowManipulator
 
         public override void ReceivedGlobalSettings(ReceivedGlobalSettingsPayload payload) { }
 
-        #region Private Methods
-
         private Task SaveSettings()
         {
             return Connection.SetSettingsAsync(JObject.FromObject(settings));
         }
-
-        #endregion
     }
 }
